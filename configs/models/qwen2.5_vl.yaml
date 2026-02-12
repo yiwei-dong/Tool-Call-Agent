@@ -1,0 +1,17 @@
+# configs/models/qwen2.5_vl.yaml
+model_id: "../Qwen/Qwen2.5-VL-3B-Instruct"
+agent_config:
+  hidden_size: 1024  # placeholder, will be updated by model
+  visual_hidden_size: 1280 # placeholder
+  num_actions: 13
+  max_history_images: 10
+  max_boxes: 5
+  num_heads: 8
+  dropout: 0.1
+
+lora:
+  enabled: true
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
