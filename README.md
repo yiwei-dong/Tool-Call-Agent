@@ -1,1 +1,1 @@
-Waiting a moment, LOL!!!
+Wait a moment, LOL!!!
