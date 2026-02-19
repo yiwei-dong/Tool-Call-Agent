@@ -1,0 +1,46 @@
+{
+  "model_id": "/root/autodl-tmp/dissertation/Qwen/Qwen2___5-VL-3B-Instruct",
+  "epochs": 1,
+  "lm_loss_weight": 1.0,
+  "freeze_backbone": false,
+  "gradient_checkpointing": true,
+  "max_length": 4096,
+
+  "head_lr_multiplier": 5.0,
+
+  "loss_weights": {
+    "action":    1.5,
+    "box_l1":    2.0,
+    "box_giou":  1.0,
+    "img1":      1.0,
+    "img2":      1.0,
+    "img_multi": 1.0
+  },
+
+  "agent_config": {
+    "hidden_size": 1536,
+    "visual_hidden_size": 1280,
+    "num_actions": 13,
+    "max_history_images": 100,
+    "max_boxes": 50,
+    "num_heads": 8,
+    "dropout": 0.1
+  },
+
+  "lora": {
+    "enabled": true,
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "modules_to_save": ["embed_tokens", "lm_head"]
+  }
+}
